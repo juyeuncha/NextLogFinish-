@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 81242bf1b4b8ae3448469deeab7427d3
+timeCreated: 1503639414
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Ground_01
+    100002: Ground_02
+    100004: Ground_03
+    100006: Ground_04
+    100008: //RootNode
+    100010: Plant_01
+    100012: Plant_02
+    100014: Plant_03
+    100016: Wall_01
+    100018: Water_01
+    100020: Water_02
+    100022: Wood_01
+    100024: Wood_02
+    100026: Wood_03
+    100028: Wood_04
+    400000: Ground_01
+    400002: Ground_02
+    400004: Ground_03
+    400006: Ground_04
+    400008: Plant_01
+    400010: //RootNode
+    400012: Plant_02
+    400014: Plant_03
+    400016: Wall_01
+    400018: Water_01
+    400020: Water_02
+    400022: Wood_01
+    400024: Wood_02
+    400026: Wood_03
+    400028: Wood_04
+    2300000: Ground_01
+    2300002: Ground_02
+    2300004: Ground_03
+    2300006: Ground_04
+    2300008: Plant_01
+    2300010: Plant_02
+    2300012: Plant_03
+    2300014: Wall_01
+    2300016: Water_01
+    2300018: Water_02
+    2300020: Wood_01
+    2300022: Wood_02
+    2300024: Wood_03
+    2300026: Wood_04
+    2300028: //RootNode
+    3300000: Ground_01
+    3300002: Ground_02
+    3300004: Ground_03
+    3300006: Ground_04
+    3300008: Plant_01
+    3300010: Plant_02
+    3300012: Plant_03
+    3300014: Wall_01
+    3300016: Water_01
+    3300018: Water_02
+    3300020: Wood_01
+    3300022: Wood_02
+    3300024: Wood_03
+    3300026: Wood_04
+    3300028: //RootNode
+    4300000: Plant_03
+    4300002: Wood_01
+    4300004: Ground_02
+    4300006: Water_01
+    4300008: Ground_03
+    4300010: Water_02
+    4300012: Wood_02
+    4300014: Wall_01
+    4300016: Plant_01
+    4300018: Ground_01
+    4300020: Wood_03
+    4300022: Ground_04
+    4300024: Wood_04
+    4300026: Plant_02
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

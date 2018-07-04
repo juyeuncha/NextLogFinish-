@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -56,11 +55,10 @@ public class coinmanager : MonoBehaviour
     public void Pause()
     {
 
-        {
             GS = GameState.Pause;
             Time.timeScale = 0f;
             pause_ui.SetActive(true);
-        }
+        
     }
 
     public void unPause()

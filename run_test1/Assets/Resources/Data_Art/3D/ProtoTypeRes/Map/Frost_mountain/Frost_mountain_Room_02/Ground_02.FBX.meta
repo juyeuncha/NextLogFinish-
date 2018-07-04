@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 97d939b34dde0d84b86ed244be9d875f
+timeCreated: 1515489776
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Flower_01
+    100002: Ground_01
+    100004: //RootNode
+    100006: Ground_02
+    100008: Ground_03
+    100010: Ground_04
+    100012: Ground_05
+    100014: Ground_Wood_01
+    100016: NV_01
+    100018: Plant_01
+    100020: Snow_01
+    100022: Snow_Flower_01
+    100024: Wall_01
+    100026: Water_01
+    100028: Wood_01
+    100030: Wood_Plant_01
+    400000: Flower_01
+    400002: Ground_01
+    400004: //RootNode
+    400006: Ground_02
+    400008: Ground_03
+    400010: Ground_04
+    400012: Ground_05
+    400014: Ground_Wood_01
+    400016: NV_01
+    400018: Plant_01
+    400020: Snow_01
+    400022: Snow_Flower_01
+    400024: Wall_01
+    400026: Water_01
+    400028: Wood_01
+    400030: Wood_Plant_01
+    2300000: Flower_01
+    2300002: Ground_01
+    2300004: Ground_02
+    2300006: Ground_03
+    2300008: Ground_04
+    2300010: Ground_05
+    2300012: Ground_Wood_01
+    2300014: NV_01
+    2300016: Plant_01
+    2300018: Snow_01
+    2300020: Snow_Flower_01
+    2300022: Wall_01
+    2300024: Water_01
+    2300026: Wood_01
+    2300028: Wood_Plant_01
+    2300030: //RootNode
+    3300000: Flower_01
+    3300002: Ground_01
+    3300004: Ground_02
+    3300006: Ground_03
+    3300008: Ground_04
+    3300010: Ground_05
+    3300012: Ground_Wood_01
+    3300014: NV_01
+    3300016: Plant_01
+    3300018: Snow_01
+    3300020: Snow_Flower_01
+    3300022: Wall_01
+    3300024: Water_01
+    3300026: Wood_01
+    3300028: Wood_Plant_01
+    3300030: //RootNode
+    4300000: Water_01
+    4300002: Plant_01
+    4300004: Snow_01
+    4300006: Wall_01
+    4300008: Ground_04
+    4300010: Snow_Flower_01
+    4300012: Ground_Wood_01
+    4300014: Flower_01
+    4300016: Wood_Plant_01
+    4300018: Wood_01
+    4300020: NV_01
+    4300022: Ground_01
+    4300024: Ground_03
+    4300026: Ground_05
+    4300028: Ground_02
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 2
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
