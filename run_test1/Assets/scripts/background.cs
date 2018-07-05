@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class background : MonoBehaviour {
 
-    public float bgspeed = 0.34f;
+    public float bgspeed = 0.65f;
     public Renderer rend;
    
 

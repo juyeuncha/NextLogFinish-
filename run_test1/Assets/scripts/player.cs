@@ -10,10 +10,16 @@ public enum PlayerState
 }
 
 public class player : MonoBehaviour {
+
+
     public PlayerState PS;
-    public float Jumppower=730f;
+    public float Jumppower=850f;
+
+   // public float DJumppower = 350f;
     
     Rigidbody rb;
+
+    public Animator animator;
 
     void Start()
     {
@@ -49,17 +55,23 @@ public class player : MonoBehaviour {
     {
         PS = PlayerState.Jump;
         rb.AddForce(new Vector3(0, Jumppower, 0));
+
+        animator.SetTrigger("Jump");
+        //animator.SetBool("Ground", false);
     }
 
     void DJump()
     {
         PS = PlayerState.DJump;
+        rb.velocity = Vector3.zero;
         rb.AddForce(new Vector3(0, Jumppower, 0));
     }
 
     void Run()
     {
         PS = PlayerState.Run;
+
+        //animator.SetBool("Ground", true);
     }
 
     void OnTriggerEnter(Collider other)

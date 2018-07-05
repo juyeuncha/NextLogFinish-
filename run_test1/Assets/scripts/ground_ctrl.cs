@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ground_ctrl : MonoBehaviour {
 
-    public float Speed = 9.5f; 
+    public float Speed = 25f; 
     public GameObject[] Ground; //계속 만들 그라운드
     public GameObject A_zone; //가운데에 있는 그라운드
     public GameObject B_zone; //화면의 오른쪽에 있는 그라운드 
