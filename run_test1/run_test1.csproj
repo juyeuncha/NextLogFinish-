@@ -168,7 +168,6 @@
     <Compile Include="Assets\Resources\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Resources\TextMesh Pro\Examples\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Resources\TextMesh Pro\Examples\Scripts\Benchmark04.cs" />
