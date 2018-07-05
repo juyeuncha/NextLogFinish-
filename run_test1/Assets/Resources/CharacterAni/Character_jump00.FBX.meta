@@ -100,7 +100,7 @@ ModelImporter:
       name: Character_jump00
       takeName: Hero_Olivia_jump
       firstFrame: 0
-      lastFrame: 10
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
