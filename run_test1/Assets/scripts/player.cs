@@ -6,6 +6,7 @@ public enum PlayerState
     Jump,
     DJump,
     Run,
+    Fall,
     Death
 }
 
@@ -14,23 +15,30 @@ public class player : MonoBehaviour {
 
     public PlayerState PS;
     public float Jumppower=850f;
+    
+    private float AxisY;
+    
 
    // public float DJumppower = 350f;
     
     Rigidbody rb;
+    
 
     public Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //MassPower = rb.mass;
+        AxisY = transform.position.y;
+        
     }
 
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.Space))
-        {
+        { 
             if (PS == PlayerState.Jump)
             {
                 DJump();
@@ -39,8 +47,25 @@ public class player : MonoBehaviour {
             {
                 Jump();
             }
-        } 
+        }
 
+        if (PS == PlayerState.Jump || PS == PlayerState.DJump)
+        {
+
+            if (AxisY > transform.position.y)
+            {
+                Fall();
+
+            }
+
+            AxisY = transform.position.y;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        //Jump();
+        //DJump();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -54,8 +79,9 @@ public class player : MonoBehaviour {
     void Jump()
     {
         PS = PlayerState.Jump;
-        rb.AddForce(new Vector3(0, Jumppower, 0));
-
+        AxisY = transform.position.y;
+        //rb.mass = 1f;
+        rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
         animator.SetTrigger("Jump");
         //animator.SetBool("Ground", false);
     }
@@ -63,15 +89,26 @@ public class player : MonoBehaviour {
     void DJump()
     {
         PS = PlayerState.DJump;
+        //rb.mass = 1f;
         rb.velocity = Vector3.zero;
-        rb.AddForce(new Vector3(0, Jumppower, 0));
+        rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
+        animator.SetTrigger("DJump");
     }
 
     void Run()
     {
+ 
         PS = PlayerState.Run;
-
+        
+        
         //animator.SetBool("Ground", true);
+    }
+
+    void Fall()
+    {
+        PS = PlayerState.Fall;
+        rb.AddForce(-Vector3.up * Jumppower,ForceMode.Impulse);
+        //rb.mass = 50f;
     }
 
     void OnTriggerEnter(Collider other)
