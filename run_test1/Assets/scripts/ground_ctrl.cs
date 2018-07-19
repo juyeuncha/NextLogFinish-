@@ -7,6 +7,7 @@ public class ground_ctrl : MonoBehaviour {
     public GameObject[] Ground; //계속 만들 그라운드
     public GameObject A_zone; //가운데에 있는 그라운드
     public GameObject B_zone; //화면의 오른쪽에 있는 그라운드 
+    
 
     void Update()
     {
@@ -36,4 +37,6 @@ public class ground_ctrl : MonoBehaviour {
         B_zone = Instantiate(Ground[GRtype], new Vector3(110, -24, 2), transform.rotation)
                  as GameObject;
     }
+
+
 }

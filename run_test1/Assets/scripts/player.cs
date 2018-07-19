@@ -7,6 +7,7 @@ public enum PlayerState
     DJump,
     Run,
     Fall,
+    DFall,
     Death
 }
 
@@ -15,22 +16,20 @@ public class player : MonoBehaviour {
 
     public PlayerState PS;
     public float Jumppower=850f;
-    
     private float AxisY;
-    
-
-   // public float DJumppower = 350f;
-    
     Rigidbody rb;
-    
-
     public Animator animator;
+    //public int JumpCount=2;
 
+
+   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         //MassPower = rb.mass;
         AxisY = transform.position.y;
+        
+        //JumpCount=0;
         
     }
 
@@ -38,18 +37,43 @@ public class player : MonoBehaviour {
     {
 
         if (Input.GetKeyDown(KeyCode.Space))
-        { 
-            if (PS == PlayerState.Jump)
+        {
+          
+                if (PS == PlayerState.Jump)
+                {
+                    DJump();
+                }
+                if (PS == PlayerState.Run)
+                {
+                    Jump();
+                }
+                if (PS == PlayerState.Fall)
+                {
+                rb.velocity = Vector3.zero;
+                rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);
+                }
+                /*if (PS == PlayerState.Fall)
+                {
+                    DJump();
+                
+                }*/
+
+            /*if (anim["Character_Fall00"].time<1)
             {
+                Debug.Log();
+            }*/
+
+            /*if (PS == PlayerState.Fall)
+            {
+                rb.velocity = Vector3.zero;
                 DJump();
-            }
-            if (PS == PlayerState.Run)
-            {
-                Jump();
-            }
+            }*/
+            
         }
 
-        if (PS == PlayerState.Jump || PS == PlayerState.DJump)
+
+
+        if (PS == PlayerState.Jump)
         {
 
             if (AxisY > transform.position.y)
@@ -57,9 +81,18 @@ public class player : MonoBehaviour {
                 Fall();
 
             }
+        }
+
+        if (PS == PlayerState.DJump)
+        {
+            if(AxisY > transform.position.y)
+            {
+                 DFall();
+            }
+        }
 
             AxisY = transform.position.y;
-        }
+        
     }
 
     private void FixedUpdate()
@@ -79,6 +112,8 @@ public class player : MonoBehaviour {
     void Jump()
     {
         PS = PlayerState.Jump;
+        /*JumpCount++;
+        Debug.Log(JumpCount);*/
         AxisY = transform.position.y;
         //rb.mass = 1f;
         rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
@@ -89,9 +124,13 @@ public class player : MonoBehaviour {
     void DJump()
     {
         PS = PlayerState.DJump;
+        /*JumpCount++;
+        Debug.Log(JumpCount);*/
         //rb.mass = 1f;
-        rb.velocity = Vector3.zero;
+        //rb.velocity = Vector3.zero;
+        
         rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
+        
         animator.SetTrigger("DJump");
     }
 
@@ -99,8 +138,8 @@ public class player : MonoBehaviour {
     {
  
         PS = PlayerState.Run;
-        
-        
+        /*JumpCount = 0;
+        Debug.Log(JumpCount);*/
         //animator.SetBool("Ground", true);
     }
 
@@ -108,7 +147,15 @@ public class player : MonoBehaviour {
     {
         PS = PlayerState.Fall;
         rb.AddForce(-Vector3.up * Jumppower,ForceMode.Impulse);
+        animator.SetTrigger("Fall");
         //rb.mass = 50f;
+    }
+
+    void DFall()
+    {
+        PS = PlayerState.DFall;
+        rb.AddForce(-Vector3.up * Jumppower, ForceMode.Impulse);
+        animator.SetTrigger("Fall");
     }
 
     void OnTriggerEnter(Collider other)

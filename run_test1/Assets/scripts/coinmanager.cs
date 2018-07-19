@@ -15,13 +15,18 @@ public class coinmanager : MonoBehaviour
 
     public static coinmanager instance;
     public GameState GS;
+    public ground_ctrl LvMeter;
 
     void Awake()
     {
         instance = this;
 
     }
-    
+    private void Start()
+    {
+        LvMeter = FindObjectOfType<ground_ctrl>();
+    }
+
 
     public Text text_coincnt;
     public Text text_mcnt;
