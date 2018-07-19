@@ -155,7 +155,7 @@ public class player : MonoBehaviour {
     {
         PS = PlayerState.DFall;
         rb.AddForce(-Vector3.up * Jumppower, ForceMode.Impulse);
-        animator.SetTrigger("Fall");
+        animator.SetTrigger("DFall");
     }
 
     void OnTriggerEnter(Collider other)
