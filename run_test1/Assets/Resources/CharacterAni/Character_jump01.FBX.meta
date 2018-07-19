@@ -219,7 +219,7 @@ ModelImporter:
       name: Character_Landing
       takeName: Hero_Olivia_jump2
       firstFrame: 22
-      lastFrame: 30
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
