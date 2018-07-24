@@ -19,7 +19,7 @@ public class player : MonoBehaviour {
     private float AxisY;
     Rigidbody rb;
     public Animator animator;
-    //public int JumpCount=2;
+    public int JumpCount=2;
 
 
    
@@ -27,16 +27,15 @@ public class player : MonoBehaviour {
     {
         rb = GetComponent<Rigidbody>();
         //MassPower = rb.mass;
-        AxisY = transform.position.y;
-        
-        //JumpCount=0;
+        AxisY = transform.position.y; 
+        JumpCount=0;
         
     }
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&&JumpCount>0)
         {
           
                 if (PS == PlayerState.Jump)
@@ -49,8 +48,10 @@ public class player : MonoBehaviour {
                 }
                 if (PS == PlayerState.Fall)
                 {
+                
                 rb.velocity = Vector3.zero;
                 rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);
+                JumpCount--;
                 }
                 /*if (PS == PlayerState.Fall)
                 {
@@ -95,17 +96,14 @@ public class player : MonoBehaviour {
         
     }
 
-    private void FixedUpdate()
-    {
-        //Jump();
-        //DJump();
-    }
+
 
     void OnCollisionEnter(Collision collision)
     {
         if (PS != PlayerState.Run)
         {
             Run();
+         
         }
     }
 
@@ -118,6 +116,7 @@ public class player : MonoBehaviour {
         //rb.mass = 1f;
         rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
         animator.SetTrigger("Jump");
+        JumpCount--;
         //animator.SetBool("Ground", false);
     }
 
@@ -132,14 +131,15 @@ public class player : MonoBehaviour {
         rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
         
         animator.SetTrigger("DJump");
+        JumpCount--;
     }
 
     void Run()
     {
  
         PS = PlayerState.Run;
-        /*JumpCount = 0;
-        Debug.Log(JumpCount);*/
+        JumpCount = 2;
+        /*Debug.Log(JumpCount);*/
         //animator.SetBool("Ground", true);
     }
 

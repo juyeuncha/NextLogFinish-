@@ -51,10 +51,17 @@ public class coinmanager : MonoBehaviour
     {
         if (GS == GameState.Play)
         {
-            Meter += Time.deltaTime * Speed;
-            text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
+            
+         Meter += Time.deltaTime * Speed;
+         text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
 
+            if (Meter > 100)
+            {
+
+            }
         }
+
+
     }
 
     public void Pause()
