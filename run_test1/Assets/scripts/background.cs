@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class background : MonoBehaviour {
 
-    public float bgspeed = 0.65f;
+    
+    public GlobVar globvar;
     public Renderer rend;
    
 
@@ -15,7 +16,7 @@ public class background : MonoBehaviour {
 
     void Update ()
     {
-        float bgoffset = Time.time * bgspeed;
+        float bgoffset = Time.time * globvar.bgspeed;
         rend.material.SetTextureOffset("_MainTex", new Vector2(bgoffset, 0));
 	}
 }

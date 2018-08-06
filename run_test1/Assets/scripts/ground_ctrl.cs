@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class ground_ctrl : MonoBehaviour {
 
-    public float Speed = 25f; 
+   
+    public GlobVar globvar;
     public GameObject[] Ground; //계속 만들 그라운드
     public GameObject A_zone; //가운데에 있는 그라운드
     public GameObject B_zone; //화면의 오른쪽에 있는 그라운드 
+    
     
 
     void Update()
@@ -16,8 +18,8 @@ public class ground_ctrl : MonoBehaviour {
 
     void Move()
     {
-        A_zone.transform.Translate(Vector3.left * Speed * Time.deltaTime);
-        B_zone.transform.Translate(Vector3.left * Speed * Time.deltaTime);
+        A_zone.transform.Translate(Vector3.left * globvar.grspeed * Time.deltaTime);
+        B_zone.transform.Translate(Vector3.left * globvar.grspeed * Time.deltaTime);
 
         if (B_zone.transform.position.x <= 0)
         {
@@ -38,5 +40,9 @@ public class ground_ctrl : MonoBehaviour {
                  as GameObject;
     }
 
+    public void ChSpeed()
+    {
+        globvar.grspeed += globvar.grchspeed;
+    }
 
 }

@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2993e2c362d0244a9f08491066720a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 25
+  globvar: {fileID: 771030016}
   Ground:
   - {fileID: 1646654123618180, guid: 21cb814c9041a744aa55b0dc6bd78f37, type: 2}
   - {fileID: 1187683482948832, guid: 381de4867d612684ca5db17d15ff42ae, type: 2}
@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 771030011}
   - component: {fileID: 771030010}
   - component: {fileID: 771030015}
+  - component: {fileID: 771030016}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -637,14 +638,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GS: 0
+  gr_ctrl: {fileID: 311107948}
+  globvar: {fileID: 771030016}
   text_coincnt: {fileID: 921111153}
   text_mcnt: {fileID: 1285556766}
   final_m: {fileID: 1314388129}
   final_coin: {fileID: 377512108}
-  Speed: 3
   Meter: 0
   pause_ui: {fileID: 545151477}
   finish_ui: {fileID: 1312913384}
+--- !u!114 &771030016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771030009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ea0cc1b1a43a74294644c445eba393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgspeed: 0.65
+  jumppower: 25
+  grspeed: 25
+  grchspeed: 0
+  mtspeed: 3
+  mtchspeed: 0
 --- !u!1001 &774266426
 Prefab:
   m_ObjectHideFlags: 0
@@ -1386,7 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e418e6d6a57ba8447a683f112c3eb804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgspeed: 0.65
+  globvar: {fileID: 771030016}
   rend: {fileID: 0}
 --- !u!1001 &1783301510
 Prefab:
@@ -1827,6 +1846,11 @@ Prefab:
       propertyPath: m_Drag
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 114737806938627438, guid: fa2642f35277b6b4fb29ea43d29fac47,
+        type: 2}
+      propertyPath: globvar
+      value: 
+      objectReference: {fileID: 771030016}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa2642f35277b6b4fb29ea43d29fac47, type: 2}
   m_IsPrefabParent: 0

@@ -15,12 +15,11 @@ public class player : MonoBehaviour {
 
 
     public PlayerState PS;
-    public float Jumppower=850f;
     private float AxisY;
     Rigidbody rb;
     public Animator animator;
     public int JumpCount=2;
-
+    public GlobVar globvar;
 
    
     void Start()
@@ -50,7 +49,7 @@ public class player : MonoBehaviour {
                 {
                 
                 rb.velocity = Vector3.zero;
-                rb.AddForce(Vector3.up * Jumppower, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * globvar.jumppower, ForceMode.Impulse);
                 JumpCount--;
                 }
                 /*if (PS == PlayerState.Fall)
@@ -114,7 +113,7 @@ public class player : MonoBehaviour {
         Debug.Log(JumpCount);*/
         AxisY = transform.position.y;
         //rb.mass = 1f;
-        rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
+        rb.AddForce(Vector3.up*globvar.jumppower,ForceMode.Impulse);
         animator.SetTrigger("Jump");
         JumpCount--;
         //animator.SetBool("Ground", false);
@@ -128,7 +127,7 @@ public class player : MonoBehaviour {
         //rb.mass = 1f;
         //rb.velocity = Vector3.zero;
         
-        rb.AddForce(Vector3.up*Jumppower,ForceMode.Impulse);
+        rb.AddForce(Vector3.up*globvar.jumppower,ForceMode.Impulse);
         
         animator.SetTrigger("DJump");
         JumpCount--;
@@ -146,7 +145,7 @@ public class player : MonoBehaviour {
     void Fall()
     {
         PS = PlayerState.Fall;
-        rb.AddForce(-Vector3.up * Jumppower,ForceMode.Impulse);
+        rb.AddForce(-Vector3.up * globvar.jumppower,ForceMode.Impulse);
         animator.SetTrigger("Fall");
         //rb.mass = 50f;
     }
@@ -154,7 +153,7 @@ public class player : MonoBehaviour {
     void DFall()
     {
         PS = PlayerState.DFall;
-        rb.AddForce(-Vector3.up * Jumppower, ForceMode.Impulse);
+        rb.AddForce(-Vector3.up * globvar.jumppower, ForceMode.Impulse);
         animator.SetTrigger("DFall");
     }
 

@@ -13,18 +13,22 @@ public enum GameState
 public class coinmanager : MonoBehaviour
 {
 
+    public delegate void SpeedLevel();
+    SpeedLevel speedLevel;
     public static coinmanager instance;
     public GameState GS;
-    public ground_ctrl LvMeter;
+    public ground_ctrl gr_ctrl;
+    public GlobVar globvar;
 
     void Awake()
     {
         instance = this;
 
     }
-    private void Start()
+
+    void OnEnable()
     {
-        LvMeter = FindObjectOfType<ground_ctrl>();
+        speedLevel += gr_ctrl.ChSpeed;
     }
 
 
@@ -32,7 +36,6 @@ public class coinmanager : MonoBehaviour
     public Text text_mcnt;
     public Text final_m;
     public Text final_coin;
-    public float Speed;
     public float Meter;
 
     public GameObject pause_ui;
@@ -43,6 +46,7 @@ public class coinmanager : MonoBehaviour
     public void GetCoin()
     {
         coincount++;
+
         text_coincnt.text = "획득코인: " + coincount;
 
     }
@@ -51,14 +55,12 @@ public class coinmanager : MonoBehaviour
     {
         if (GS == GameState.Play)
         {
-            
-         Meter += Time.deltaTime * Speed;
-         text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
 
-            if (Meter > 100)
-            {
-
-            }
+            speedLevel();
+            globvar.mtspeed += globvar.mtchspeed;
+            Meter += Time.deltaTime * globvar.mtspeed;
+            text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
+      
         }
 
 
