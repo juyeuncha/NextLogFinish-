@@ -525,6 +525,12 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224936312878786914, guid: 1352c301b9b34d84dad3466975d6b726,
     type: 2}
   m_PrefabInternal: {fileID: 1519964076}
+--- !u!114 &729162352 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114737806938627438, guid: fa2642f35277b6b4fb29ea43d29fac47,
+    type: 2}
+  m_PrefabInternal: {fileID: 1956550303}
+  m_Script: {fileID: 11500000, guid: 4b6528abed2253b4e84e1df34a02b67d, type: 3}
 --- !u!1 &735536337 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1071969759690250, guid: 5e2374da6e1b9f44490854dd21b7efc2,
@@ -640,6 +646,8 @@ MonoBehaviour:
   GS: 0
   gr_ctrl: {fileID: 311107948}
   globvar: {fileID: 771030016}
+  _background: {fileID: 1724414170}
+  _player: {fileID: 729162352}
   text_coincnt: {fileID: 921111153}
   text_mcnt: {fileID: 1285556766}
   final_m: {fileID: 1314388129}

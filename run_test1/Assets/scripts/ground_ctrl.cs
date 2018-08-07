@@ -9,14 +9,9 @@ public class ground_ctrl : MonoBehaviour {
     public GameObject A_zone; //가운데에 있는 그라운드
     public GameObject B_zone; //화면의 오른쪽에 있는 그라운드 
     
-    
+   
 
-    void Update()
-    {
-        Move();    
-    }
-
-    void Move()
+    public void MoveGr()
     {
         A_zone.transform.Translate(Vector3.left * globvar.grspeed * Time.deltaTime);
         B_zone.transform.Translate(Vector3.left * globvar.grspeed * Time.deltaTime);

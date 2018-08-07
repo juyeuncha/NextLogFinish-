@@ -200,7 +200,7 @@ RectTransform:
   - {fileID: 545151478}
   - {fileID: 1312913385}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2993e2c362d0244a9f08491066720a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  globvar: {fileID: 771030016}
   Ground:
   - {fileID: 494513148}
   - {fileID: 201826574}
@@ -398,7 +398,7 @@ Transform:
   - {fileID: 201826578}
   - {fileID: 896857359}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &377512108 stripped
 MonoBehaviour:
@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 771030011}
   - component: {fileID: 771030010}
   - component: {fileID: 771030015}
+  - component: {fileID: 771030016}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -636,7 +637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &771030015
 MonoBehaviour:
@@ -650,14 +651,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GS: 0
+  gr_ctrl: {fileID: 311107948}
+  globvar: {fileID: 771030016}
+  _background: {fileID: 1724414170}
+  _player: {fileID: 1179817825}
   text_coincnt: {fileID: 921111153}
   text_mcnt: {fileID: 1285556766}
   final_m: {fileID: 1314388129}
   final_coin: {fileID: 377512108}
-  Speed: 3
   Meter: 0
   pause_ui: {fileID: 545151477}
   finish_ui: {fileID: 1312913384}
+--- !u!114 &771030016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771030009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ea0cc1b1a43a74294644c445eba393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgspeed: 0.65
+  jumppower: 25
+  grspeed: 25
+  grchspeed: 0
+  mtspeed: 3
+  mtchspeed: 0
 --- !u!1001 &774266426
 Prefab:
   m_ObjectHideFlags: 0
@@ -995,7 +1016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!4 &864195902 stripped
 Transform:
@@ -1083,7 +1104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1013125400
 Prefab:
@@ -1380,7 +1401,7 @@ Transform:
   m_LocalScale: {x: 3.42444, y: 3.5972383, z: 3.523086}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1179817825
 MonoBehaviour:
@@ -1394,7 +1415,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PS: 0
-  Jumppower: 550
+  animator: {fileID: 0}
+  JumpCount: 2
+  globvar: {fileID: 771030016}
 --- !u!1001 &1263228054
 Prefab:
   m_ObjectHideFlags: 0
@@ -1656,7 +1679,7 @@ Transform:
   m_LocalScale: {x: 111, y: 49.70763, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1724414170
 MonoBehaviour:
@@ -1669,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e418e6d6a57ba8447a683f112c3eb804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgspeed: 0.34
+  globvar: {fileID: 771030016}
   rend: {fileID: 0}
 --- !u!1001 &1839004218
 Prefab:

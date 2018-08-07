@@ -14,7 +14,7 @@ public class background : MonoBehaviour {
         rend = GetComponent<Renderer>();
     }
 
-    void Update ()
+    public void MoveBg()
     {
         float bgoffset = Time.time * globvar.bgspeed;
         rend.material.SetTextureOffset("_MainTex", new Vector2(bgoffset, 0));

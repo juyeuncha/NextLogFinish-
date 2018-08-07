@@ -19,6 +19,18 @@ public class coinmanager : MonoBehaviour
     public GameState GS;
     public ground_ctrl gr_ctrl;
     public GlobVar globvar;
+    public background _background;
+    public player _player;
+
+    public Text text_coincnt;
+    public Text text_mcnt;
+    public Text final_m;
+    public Text final_coin;
+    public float Meter;
+    int coincount = 0;
+    public GameObject pause_ui;
+    public GameObject finish_ui;
+
 
     void Awake()
     {
@@ -32,37 +44,41 @@ public class coinmanager : MonoBehaviour
     }
 
 
-    public Text text_coincnt;
-    public Text text_mcnt;
-    public Text final_m;
-    public Text final_coin;
-    public float Meter;
-
-    public GameObject pause_ui;
-    public GameObject finish_ui;
-
-    int coincount = 0;
-
-    public void GetCoin()
-    {
-        coincount++;
-
-        text_coincnt.text = "획득코인: " + coincount;
-
-    }
 
     public void Update()
     {
         if (GS == GameState.Play)
         {
 
-            speedLevel();
-            globvar.mtspeed += globvar.mtchspeed;
-            Meter += Time.deltaTime * globvar.mtspeed;
-            text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
-      
+            _background.MoveBg();
+            gr_ctrl.MoveGr();
+            SpLev();
+            MeterCnt();
+            _player.KeyCtrl();
+            _player.JumpCtrl();
+
         }
 
+
+    }
+
+    public void SpLev()
+    {
+        speedLevel();
+        globvar.mtspeed += globvar.mtchspeed;
+    }
+
+    public void MeterCnt()
+    {
+        Meter += Time.deltaTime * globvar.mtspeed;
+        text_mcnt.text = string.Format("달린거리: {0:0.00}", Meter);
+    }
+
+    public void GetCoin()
+    {
+        coincount++;
+
+        text_coincnt.text = "획득코인: " + coincount;
 
     }
 
