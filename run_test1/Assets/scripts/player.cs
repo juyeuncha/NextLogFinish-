@@ -117,10 +117,10 @@ public class player : MonoBehaviour {
 
     void Fall()
     {
+        if (rb == null) { return; }
         PS = PlayerState.Fall;
         rb.AddForce(-Vector3.up * globvar.jumppower,ForceMode.Impulse);
         animator.SetTrigger("Fall");
-
     }
 
     void DFall()
@@ -135,7 +135,7 @@ public class player : MonoBehaviour {
         if (other.gameObject.tag == "coin")
         {
              
-            coinmanager.instance.GetCoin();
+            GameManager.instance.GetCoin();
 
             Destroy(other.gameObject);
             
@@ -146,7 +146,7 @@ public class player : MonoBehaviour {
         {
             PS = PlayerState.Death;
 
-            coinmanager.instance.GameOver();
+            GameManager.instance.GameOver();
             
         }
 

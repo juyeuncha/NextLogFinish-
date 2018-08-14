@@ -168,9 +168,9 @@
     <Compile Include="Assets\Resources\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
     <Compile Include="Assets\Resources\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\GlobVar.cs" />
     <Compile Include="Assets\scripts\background.cs" />
-    <Compile Include="Assets\scripts\coinmanager.cs" />
     <Compile Include="Assets\scripts\ground_ctrl.cs" />
     <Compile Include="Assets\scripts\player.cs" />
   </ItemGroup>
