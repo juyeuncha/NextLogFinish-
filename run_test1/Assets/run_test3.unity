@@ -601,11 +601,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 774266426}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1 &394587763 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1795366764838064, guid: b4935491c977510489c782011eae75a0,
-    type: 2}
-  m_PrefabInternal: {fileID: 1408179174}
 --- !u!1 &412673220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1041,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a4375b3f1882d4986689b2aa7e5a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GS: 0
+  gr_ctrl: {fileID: 311107948}
+  globvar: {fileID: 771030016}
+  _background: {fileID: 1724414170}
+  _player: {fileID: 1179817825}
+  spawn_pos: {fileID: 0}
+  text_coincnt: {fileID: 921111153}
+  text_mcnt: {fileID: 1285556766}
+  final_m: {fileID: 1314388129}
+  final_coin: {fileID: 377512108}
+  Meter: 0
   Selected_Char:
   - {fileID: 1535178247}
   - {fileID: 1175849657}
@@ -1053,17 +1059,8 @@ MonoBehaviour:
   - {fileID: 1574925292}
   - {fileID: 39635596}
   - {fileID: 1154521179}
-  GS: 0
-  gr_ctrl: {fileID: 311107948}
-  globvar: {fileID: 771030016}
-  _background: {fileID: 1724414170}
-  _player: {fileID: 1179817825}
-  select_stg: {fileID: 394587763}
-  text_coincnt: {fileID: 921111153}
-  text_mcnt: {fileID: 1285556766}
-  final_m: {fileID: 1314388129}
-  final_coin: {fileID: 377512108}
-  Meter: 0
+  select_stg: {fileID: 0}
+  selectedchar_num: 0
   pause_ui: {fileID: 545151477}
   finish_ui: {fileID: 1312913384}
 --- !u!114 &771030016

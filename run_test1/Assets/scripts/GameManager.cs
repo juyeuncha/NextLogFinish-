@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+
 public enum GameState
 {
     Play,
@@ -17,14 +18,14 @@ public class GameManager : MonoBehaviour
     public delegate void SpeedLevel();
     SpeedLevel speedLevel;
     public static GameManager instance;
-    public GameObject[] Selected_Char;
-    //private Quaternion turn = Quaternion.identity;
     public GameState GS;
     public ground_ctrl gr_ctrl;
     public GlobVar globvar;
+   
     public background _background;
     public player _player;
-    public GameObject select_stg;
+    
+    public GameObject spawn_pos=null;
 
     public Text text_coincnt;
     public Text text_mcnt;
@@ -32,14 +33,16 @@ public class GameManager : MonoBehaviour
     public Text final_coin;
     public float Meter;
     int coincount = 0;
-    int selectedchar_num = 0;
-    int turnValue=0;
+
+    public GameObject[] Selected_Char;
+    public GameObject select_stg;
+    public int selectedchar_num = 0;
+    int turnValue = 0;
     float lerptiming;
     float startValue;
+
     public GameObject pause_ui;
     public GameObject finish_ui;
-
-    
 
 
     void Awake()
@@ -55,9 +58,27 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-     
         select_stg = GameObject.Find("select_stage");
-        //turn.eulerAngles = new Vector3(0, turnvalue, 0);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            int selectedchar_final = PlayerPrefs.GetInt("selectedchar_final");
+
+            if (spawn_pos != null)
+            {
+                spawn_pos = GameObject.FindGameObjectWithTag("Respawn");
+
+                for (int i = 0; i < Selected_Char.Length; i++)
+                {
+                    if (selectedchar_final == i)
+                    {
+                        Instantiate(Selected_Char[i], spawn_pos.transform.position, spawn_pos.transform.rotation);
+                    }
+                }
+            }
+
+        }
+        
         
     }
 
@@ -133,9 +154,11 @@ public class GameManager : MonoBehaviour
 
     public void GoPlay()
     {
+        PlayerPrefs.SetInt("selectedchar_final", selectedchar_num);
         GS = GameState.Play;
         Time.timeScale = 1f;
         SceneManager.LoadScene("run_test1");
+
     }
 
     public IEnumerator TurnRotation()
@@ -143,7 +166,7 @@ public class GameManager : MonoBehaviour
         lerptiming = 0;
         while (lerptiming < 1)
         {
-            lerptiming += Time.deltaTime*2;
+            lerptiming += Time.deltaTime * 2;
             if (lerptiming > 1)
             {
                 lerptiming = 1;
@@ -151,35 +174,30 @@ public class GameManager : MonoBehaviour
             Vector3 turn = new Vector3(0, Mathf.Lerp(startValue, turnValue, lerptiming), 0);
             select_stg.transform.rotation = Quaternion.Euler(turn);
             yield return null;
-         
+
         }
-        
+
     }
 
     public void SelectChar_Left()
     {
         startValue = turnValue;
-        turnValue += 360/Selected_Char.Length;
-        
+        turnValue += 360 / Selected_Char.Length;
+
         selectedchar_num--;
         if (selectedchar_num < 0)
         {
             selectedchar_num = 5;
         }
 
-        //turn.eulerAngles = new Vector3(0, turnvalue, 0);
-        //select_stg.transform.rotation = Quaternion.Euler(0, turnvalue, 0);
-        //float start = turnvalue;
-        //float end = turnvalue + (360 / Selected_Char.Length);
         StartCoroutine(TurnRotation());
 
-        
     }
 
     public void SelectChar_Right()
     {
         startValue = turnValue;
-        turnValue -= 360/Selected_Char.Length;
+        turnValue -= 360 / Selected_Char.Length;
 
         selectedchar_num++;
         if (selectedchar_num > 5)
@@ -187,14 +205,7 @@ public class GameManager : MonoBehaviour
             selectedchar_num = 0;
         }
 
-        //select_stg.transform.rotation = Quaternion.Euler(0, turnvalue, 0);
-
-        //float start = turnvalue;
-        //float end = turnvalue - (360 / Selected_Char.Length);
         StartCoroutine(TurnRotation());
-        
 
-        
     }
-
 }

@@ -337,6 +337,42 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a455701db998c524099b4c131e2689f6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &309655860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 309655862}
+  - component: {fileID: 309655861}
+  m_Layer: 0
+  m_Name: spawn_pos
+  m_TagString: Respawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &309655861
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309655860}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &309655862
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 309655860}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -31.7, y: -16.48, z: 0.3}
+  m_LocalScale: {x: 3.4, y: 3.4, z: 3.5}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &311107947
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,12 +679,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a4375b3f1882d4986689b2aa7e5a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Select_Char: []
+  Selected_Char:
+  - {fileID: 1445713914240076, guid: e21314e58c83ad24aa5c15a89cd5c0b4, type: 2}
+  - {fileID: 1475417638515364, guid: 2837aac1d91ba434984968fa2dd25135, type: 2}
+  - {fileID: 1441500215240832, guid: 146ef5863e340ef4eaf403149e2ee596, type: 2}
+  - {fileID: 1033572698333106, guid: 55c88cdfd121bb941a38527c07593a4a, type: 2}
+  - {fileID: 1224494340591866, guid: fa77a8947ebdf4a4e909d6f7834a78c3, type: 2}
+  - {fileID: 1888356937585640, guid: e2810356afdb448429f03fa3ba8e133d, type: 2}
   GS: 0
   gr_ctrl: {fileID: 311107948}
   globvar: {fileID: 771030016}
   _background: {fileID: 1724414170}
   _player: {fileID: 729162352}
+  select_stg: {fileID: 0}
+  spawn_pos: {fileID: 309655860}
   text_coincnt: {fileID: 921111153}
   text_mcnt: {fileID: 1285556766}
   final_m: {fileID: 1314388129}
@@ -1502,6 +1546,10 @@ Prefab:
       propertyPath: globvar
       value: 
       objectReference: {fileID: 771030016}
+    - target: {fileID: 1445713914240076, guid: e21314e58c83ad24aa5c15a89cd5c0b4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e21314e58c83ad24aa5c15a89cd5c0b4, type: 2}
   m_IsPrefabParent: 0
